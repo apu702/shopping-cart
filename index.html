@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default" id="minusbtn"><i class="fas fa-minus"></i></button>
+                           <input id="Black-quantity" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default" id="plusbtn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$ <span id="black-price"> 1219 </span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default" id="minusbtn2"><i class="fas fa-minus"></i></button>
+                           <input id="Silicon-quantity" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default" id="plusbtn2"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$ <span id="Silicon-price">59</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 ">
+                        <h5>$ <span id="sub-total">1278</span></h5>
+                        <h5>$0</h5>
+                        <h5>$ <span id="total">1278</span> </h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button  type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+<script>
+//Black Iphone Part
+       const plusBtn = document.getElementById("plusbtn");
+       plusBtn.addEventListener("click", function(){
+            
+
+            //Increase Black quantity
+            const BlackQuantity = document.getElementById("Black-quantity").value;
+            const BlackQuantityNum = parseFloat(BlackQuantity);
+            const UpdatedBlackQuantity = BlackQuantityNum + 1;
+            document.getElementById("Black-quantity").value = UpdatedBlackQuantity; 
+
+
+            //Increase Black Price
+            const BlackPrice = document.getElementById("black-price").innerText;
+            const BlackPriceNum = parseFloat(BlackPrice);
+            const UpdatedBlackPrice = BlackPriceNum + 1219;
+            document.getElementById("black-price").innerText = UpdatedBlackPrice; 
+
+            //Increase Subtotal
+            const subTotal = document.getElementById("sub-total").innerText;
+            const subTotalNum = parseFloat(subTotal); 
+         
+            const updatedSubTotal = subTotalNum + 1219;
+            document.getElementById("sub-total").innerText =updatedSubTotal;  
+
+             //Increase total
+             const Total = document.getElementById("total").innerText;
+            const TotalNum = parseFloat(Total); 
+         
+            const updatedTotal = TotalNum + 1219;
+            document.getElementById("total").innerText =updatedTotal;  
+      
+      })
+
+
+       const minusBtn = document.getElementById("minusbtn");
+       minusBtn.addEventListener("click", function(){
+            
+
+            //Decrease Black quantity
+            const BlackQuantity = document.getElementById("Black-quantity").value;
+            const BlackQuantityNum = parseFloat(BlackQuantity);
+            const UpdatedBlackQuantity = BlackQuantityNum - 1;
+            document.getElementById("Black-quantity").value = UpdatedBlackQuantity;
+
+
+             //Decrease Black Price
+            const BlackPrice = document.getElementById("black-price").innerText;
+            const BlackPriceNum = parseFloat(BlackPrice);
+            const UpdatedBlackPrice = BlackPriceNum - 1219;
+            document.getElementById("black-price").innerText = UpdatedBlackPrice; 
+
+             //Decrease Subtotal
+             const subTotal = document.getElementById("sub-total").innerText;
+            const subTotalNum = parseFloat(subTotal); 
+         
+            const updatedSubTotal = subTotalNum - 1219;
+            document.getElementById("sub-total").innerText =updatedSubTotal;   
+
+            //Decrease total
+             const Total = document.getElementById("total").innerText;
+            const TotalNum = parseFloat(Total); 
+         
+            const updatedTotal = TotalNum - 1219;
+            document.getElementById("total").innerText =updatedTotal;     
+ 
+       
+      })
+
+
+
+
+
+
+
+//Silicon Iphone Part//
+      const plusBtn2 = document.getElementById("plusbtn2");
+       plusBtn2.addEventListener("click", function(){
+            
+
+            //Increase Silicon quantity
+            const SiliconQuantity = document.getElementById("Silicon-quantity").value;
+            const SiliconQuantityNum = parseFloat(SiliconQuantity);
+            const UpdatedSiliconQuantity = SiliconQuantityNum + 1;
+            document.getElementById("Silicon-quantity").value = UpdatedSiliconQuantity; 
+
+
+             //Increase Silicon Price
+             const SiliconPrice = document.getElementById("Silicon-price").innerText;
+             const SiliconPriceNum = parseFloat(SiliconPrice);
+             const UpdatedSiliconPrice = SiliconPriceNum + 59;
+             document.getElementById("Silicon-price").innerText = UpdatedSiliconPrice; 
+
+
+            //Increase Subtotal
+            const subTotal = document.getElementById("sub-total").innerText;
+            const subTotalNum = parseFloat(subTotal); 
+         
+            const updatedSubTotal = subTotalNum + 59;
+            document.getElementById("sub-total").innerText =updatedSubTotal;   
+
+             //Increase total
+            const Total = document.getElementById("total").innerText;
+            const TotalNum = parseFloat(Total); 
+         
+            const updatedTotal = TotalNum + 59;
+            document.getElementById("total").innerText =updatedTotal;             
+      })
+
+
+        const minusBtn2 = document.getElementById("minusbtn2");
+        minusBtn2.addEventListener("click", function(){
+            console.log('jskjg')
+
+             //Decrease Black quantity
+             const SiliconQuantity = document.getElementById("Silicon-quantity").value;
+             const SiliconQuantityNum = parseFloat(SiliconQuantity);
+             const UpdatedSiliconQuantity = SiliconQuantityNum - 1;
+             document.getElementById("Silicon-quantity").value = UpdatedSiliconQuantity;
+
+
+              //Decrease Black Price
+             const SiliconPrice = document.getElementById("Silicon-price").innerText;
+             const SiliconPriceNum = parseFloat(SiliconPrice);
+             const UpdatedSiliconPrice = SiliconPriceNum - 59;
+             document.getElementById("Silicon-price").innerText = UpdatedSiliconPrice;  
+
+
+              //Decrease Subtotal
+             const subTotal = document.getElementById("sub-total").innerText;
+            const subTotalNum = parseFloat(subTotal); 
+         
+            const updatedSubTotal = subTotalNum - 59;
+            document.getElementById("sub-total").innerText =updatedSubTotal; 
+
+             //Decrease Subtotal
+             const Total = document.getElementById("total").innerText;
+            const TotalNum = parseFloat(Total); 
+         
+            const updatedTotal = TotalNum - 59;
+            document.getElementById("total").innerText =updatedTotal;             
+       })
+
+   </script>
+</body>
+
+</html>
